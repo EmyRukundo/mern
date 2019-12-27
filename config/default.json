@@ -1,0 +1,4 @@
+{
+    "mangoURI":  "mongodb+srv://emy123:emy123@dbconnector-ppwdw.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettotken"
+}
