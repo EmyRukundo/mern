@@ -7,7 +7,7 @@ const db = config.get('mangoURI');
          mongoose.connect(db, { 
              useUnifiedTopology: true, 
              useNewUrlParser: true,
-             userCreateIndex: true
+             useFindAndModify: false
             });
          console.log('MongoDB Connected..');
      } catch(err){
