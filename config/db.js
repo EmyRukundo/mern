@@ -16,5 +16,4 @@ const db = config.get('mangoURI');
           process.exit( 1);
      }
  };
-
  module.exports = connectDb;

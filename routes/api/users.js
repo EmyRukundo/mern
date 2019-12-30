@@ -23,12 +23,11 @@ router.post('/',[
     if(!errors.isEmpty()){
         return res.status(400).json({ errors: errors.array()}); 
     }
-         const { name, emial, password} = req.body;
+         const { name, email, password} = req.body;
 
          try {
             // see if user exists
-
-            let user = await User.findOne ({ emial});
+            let user = await User.findOne ({ email});
 
             if(user){
                  return res.status(400).json({ errors: [{ msg: 'User already exists'}]});
@@ -48,9 +47,7 @@ router.post('/',[
     });
     // Encrypt password
     const salt = await bcrypt.genSalt(10);
-
     user .password = await bcrypt.hash(password, salt);
-
     await user.save();
 
     //Return jsonwebtoken
